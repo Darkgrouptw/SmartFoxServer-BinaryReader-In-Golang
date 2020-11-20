@@ -1,6 +1,7 @@
 package main
 
 import "encoding/json"
+import "fmt"
 
 import "./SFSReader"
 import "./Common"
@@ -15,6 +16,8 @@ func main() {
 	Map := SFSReader.DecodeDataToMap(TestData)
 	ByteData, Error := json.Marshal(Map)
 	Common.Check(Error)
+	fmt.Printf("Json Format:" + string(ByteData) + "\n")
 
-	print(string(ByteData))
+	fmt.Printf("Size of Ds: %d\n", len(SFSReader.SFSGetArray(Map["Ds"].(SFSReader.DataWrapper))))
+	fmt.Println(SFSReader.SFSGetArray(Map["Ds"].(SFSReader.DataWrapper)))
 }

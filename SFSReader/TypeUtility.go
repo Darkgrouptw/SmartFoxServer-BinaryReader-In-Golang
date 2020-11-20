@@ -239,12 +239,7 @@ func ReadingSFSObject(HexData []byte, Index int) (DataWrapper, int) {
 		var PropertyName string
 		PropertyName, Index = ReadingUTFString(HexData, Index)
 
-		// var wrapper2 DataWrapper
-		// wrapper2, ReadingIndex = DecodeObject(HexData, ReadingIndex)
 		MapData[PropertyName], Index = DecodeObject(HexData, Index)
-
-		// panic(wrapper.Data)
-		// ResultData[PropertyName] = wrapper
 	}
 	return wrapper, Index
 }
