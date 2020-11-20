@@ -2,6 +2,7 @@
 ## Outline
 1. [Introduction](#Introduction)
 2. [Details](#Details)
+3. [Something interesting](#Somethinginteresting)
 
 ## Introduction
 **This project is based on [SmartFoxServer](#https://www.smartfoxserver.com/), and it transfor the binary data to map in Golang.** 
@@ -26,3 +27,11 @@ sequenceDiagram
 ```
 
 ## Details
+An example 4 byte data(01010100 01100101 01110011 01110100)
+```mermaid
+graph LR
+    A[BinaryData '01010100 01100101 01110011 01110100'] -->B[HexData '54 65 73 74']
+    B --> C[RealData 'Test']
+```
+
+## Something interesting
