@@ -20,8 +20,8 @@ func DecompressData(DataStr string) []byte {
 	// 來源：
 	// https://stackoverflow.com/questions/29513472/golang-compress-flate-module-cant-decompress-valid-deflate-compressed-http-b
 	reader, Error := zlib.NewReader(bytes.NewReader(ByteData))
-	defer reader.Close()
 	Common.Check(Error)
+	defer reader.Close()
 	DecodeBytes, Error := ioutil.ReadAll(reader)
 	Common.Check(Error)
 
