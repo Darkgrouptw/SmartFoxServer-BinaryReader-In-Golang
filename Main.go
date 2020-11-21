@@ -16,8 +16,14 @@ func main() {
 	Map := SFSReader.DecodeDataToMap(TestData)
 	ByteData, Error := json.Marshal(Map)
 	Common.Check(Error)
-	fmt.Printf("Json Format:" + string(ByteData) + "\n")
+	fmt.Printf("Json Format:" + string(ByteData) + "\n\n")
 
 	fmt.Printf("Size of Ds: %d\n", len(SFSReader.SFSGetArray(Map["Ds"].(SFSReader.DataWrapper))))
 	fmt.Println(SFSReader.SFSGetArray(Map["Ds"].(SFSReader.DataWrapper)))
+	fmt.Println("")
+
+	Player0 := SFSReader.SFSGetArray(Map["Ds"].(SFSReader.DataWrapper))[0]
+	Player0Data := Player0.Data.(map[string]interface{})
+	fmt.Println(SFSReader.SFSGetIntArray(Player0Data["Units"]))
+	fmt.Println(SFSReader.SFSGetInt(Player0Data["BlogLevel"]))
 }

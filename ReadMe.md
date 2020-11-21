@@ -27,11 +27,11 @@ sequenceDiagram
 ```
 
 ## Details
-An example 4 byte data(01010100 01100101 01110011 01110100)
-```mermaid
-graph LR
-    A[BinaryData '01010100 01100101 01110011 01110100'] -->B[HexData '54 65 73 74']
-    B --> C[RealData 'Test']
-```
+The testdata in the main file is a binary data and transfor to hex string. SFSReader is a class which may implement the SFSObject in java.
+
+SFSReader:
+- DecodeDataToMap: Decode the binary data to map data. It's similar to [newFromBinaryData](#http://docs2x.smartfoxserver.com/api-docs/javadoc/server/com/smartfoxserver/v2/entities/data/SFSObject.html#newFromBinaryData-byte:A-)
+- SFSGetArray: Get sfs array from sfsobject.
+- SFSGetIntArray: Get int array fom sfsobject.
 
 ## Something interesting

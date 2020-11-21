@@ -114,6 +114,15 @@ func SFSGetArray(Data interface{}) []DataWrapper {
 	panic("Type Wrong !!")
 }
 
+// 拿取 Array 資料
+func SFSGetInt(Data interface{}) int32 {
+	wrapper := Data.(DataWrapper)
+	if wrapper.DataType == INT {
+		return wrapper.Data.(int32)
+	}
+	panic("Type Wrong !!")
+}
+
 // 拿取 Int Array 的資料
 func SFSGetIntArray(Data interface{}) []int32 {
 	wrapper := Data.(DataWrapper)
