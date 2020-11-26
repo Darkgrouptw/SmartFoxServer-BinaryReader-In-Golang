@@ -9,7 +9,8 @@
 
 In my working project(not this one), our game server(Java) need to store some game data in database by storing into a class and celling [this](#http://docs2x.smartfoxserver.com/api-docs/javadoc/server/com/smartfoxserver/v2/entities/data/SFSObject.html#toBinary--). Our operation server(Golang) which shows statistics data and collect [Flurry data](#https://www.flurry.com/) and to decode the binary data. The offical website is not provide Golang API and therefore I made up this project. The following picture shows the situation.
 
-```mermaid
+![Workflow](./Images/Workflow.png)
+<!-- ```mermaid
 sequenceDiagram
     participant Java as JavaServer
     participant DB as Database
@@ -24,7 +25,7 @@ sequenceDiagram
     loop Every period
         Go ->> DB: Query the data
     end
-```
+``` -->
 
 ## Details
 The testdata in the main file is a binary data and transfor to hex string. SFSReader is a class which may implement the SFSObject in java.
