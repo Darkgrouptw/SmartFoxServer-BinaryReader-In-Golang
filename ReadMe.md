@@ -2,7 +2,7 @@
 ## Outline
 1. [Introduction](#Introduction)
 2. [Details](#Details)
-3. [Something interesting](#Somethinginteresting)
+3. [Something Interesting](#Something Interesting)
 
 ## Introduction
 **This project is based on [SmartFoxServer](#https://www.smartfoxserver.com/), and it transfor the binary data to map in Golang.** 
@@ -31,7 +31,18 @@ The testdata in the main file is a binary data and transfor to hex string. SFSRe
 
 SFSReader:
 - DecodeDataToMap: Decode the binary data to map data. It's similar to [newFromBinaryData](#http://docs2x.smartfoxserver.com/api-docs/javadoc/server/com/smartfoxserver/v2/entities/data/SFSObject.html#newFromBinaryData-byte:A-)
-- SFSGetArray: Get sfs array from sfsobject.
-- SFSGetIntArray: Get int array fom sfsobject.
+- SFSGetArray: Get sfs array from DataWrapper(SFSPbject).
+- SFSGetIntArray: Get int array from DataWrapper(SFSPbject).
+- SFSGetInt: Get int from DataWrapper(SFSObject)
 
-## Something interesting
+## Something Interesting
+I use ILSpy to decompile C# Smartfoxserver (Plz don't sue me), and I may give some suggestions to this API.
+- Compress the data if you have an array that store class multi-times.
+- PutByte and PutBool stores same size(1 byte) in SmartFoxServer. 
+![PutByte](./Images/ReadByte.png)
+![PutBool](./Images/ReadBool.png)
+- Maximum size of byte array is 2^32. Maximum size of other array is 2^16
+![ByteArray](./Images/ByteArray.png)
+![IntArray](./Images/IntArray.png)
+- The red part in the below figure is not being implement yet.
+![MissingPart](./Images/MissingPart.png)
