@@ -1,8 +1,8 @@
 # SmartFoxServer Binary Data Reader
 ## Outline
-1. [Introduction](#Introduction)
-2. [Details](#Details)
-3. [Something Interesting](#Something Interesting)
+1. [Introduction](#introduction)
+2. [Details](#details)
+3. [Something Interesting](#something-interesting)
 
 ## Introduction
 **This project is based on [SmartFoxServer](#https://www.smartfoxserver.com/), and it transfor the binary data to map in Golang.** 
